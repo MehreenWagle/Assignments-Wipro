@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Student Form</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+    <th:block th:replace="~{nav :: navbar}"></th:block>
+
+    <h2>Student Form</h2>
+
+    <form th:action="@{/save}" th:object="${student}" method="post">
+        <input type="hidden" th:field="*{id}" />
+
+        Name: <input type="text" th:field="*{name}" required /><br/>
+        Class: <input type="text" th:field="*{className}" required /><br/>
+        Roll No: <input type="text" th:field="*{rollNo}" required /><br/>
+
+        Gender:
+        <select th:field="*{gender}">
+            <option th:each="g : ${genders}" th:value="${g}" th:text="${g}"></option>
+        </select><br/>
+
+        DOB: <input type="date" th:field="*{dob}" required /><br/>
+
+        <input type="submit" value="Save Student" />
+    </form>
+</body>
+</html>
