@@ -1,0 +1,57 @@
+<div class="feedback-wrapper">
+  <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()" class="feedback-form">
+    <h2>💬 Send Us Your Feedback</h2>
+
+    <!-- Name -->
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" placeholder="Enter your name">
+      <mat-error *ngIf="feedbackForm.get('name')?.hasError('required')">
+        Name is required
+      </mat-error>
+      <mat-error *ngIf="feedbackForm.get('name')?.hasError('minlength')">
+        Name must be at least 3 characters
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Email -->
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" placeholder="Enter your email">
+      <mat-error *ngIf="feedbackForm.get('email')?.hasError('required')">
+        Email is required
+      </mat-error>
+      <mat-error *ngIf="feedbackForm.get('email')?.hasError('email')">
+        Enter a valid email address
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Subject -->
+    <mat-form-field appearance="outline">
+      <mat-label>Subject</mat-label>
+      <input matInput formControlName="subject" placeholder="Enter subject">
+      <mat-error *ngIf="feedbackForm.get('subject')?.hasError('required')">
+        Subject is required
+      </mat-error>
+      <mat-error *ngIf="feedbackForm.get('subject')?.hasError('minlength')">
+        Subject must be at least 4 characters
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Message -->
+    <mat-form-field appearance="outline">
+      <mat-label>Message</mat-label>
+      <textarea matInput rows="4" formControlName="message" placeholder="Type your message"></textarea>
+      <mat-error *ngIf="feedbackForm.get('message')?.hasError('required')">
+        Message is required
+      </mat-error>
+      <mat-error *ngIf="feedbackForm.get('message')?.hasError('minlength')">
+        Message must be at least 10 characters
+      </mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="feedbackForm.invalid">
+      🚀 Submit
+    </button>
+  </form>
+</div>

@@ -1,0 +1,94 @@
+.movie-container {
+  padding: 2rem;
+  background: #1a1a2e; /* solid dark navy */
+  min-height: 100vh;
+  color: white;
+  text-align: center;
+}
+
+/* Modern aqua heading */
+.welcome-text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #00e0ff;
+  text-shadow: 0 0 8px #00e0ff, 0 0 16px #007a99;
+}
+
+.filter-dropdown {
+  width: 250px;
+  margin-bottom: 1.5rem;
+  background: white;
+  border-radius: 8px;
+}
+
+.avg-rating {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #ff6f61; /* coral for contrast */
+}
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.movie-card {
+  border-radius: 12px;
+  overflow: hidden;
+  background: #ffffff; /* solid white cards */
+  color: #333;
+  transition: transform 0.25s, box-shadow 0.3s;
+  max-width: 250px;
+  margin: auto;
+}
+
+.movie-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.movie-card img {
+  height: 250px;
+  object-fit: cover;
+}
+
+mat-card-content {
+  padding: 0.8rem;
+}
+
+mat-card-content h2 {
+  margin: 0.3rem 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #1a1a2e; /* matches background */
+}
+
+.genre {
+  font-size: 0.85rem;
+  color: #ff6f61; /* coral accent */
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+}
+
+.desc {
+  font-size: 0.8rem;
+  margin-bottom: 0.8rem;
+  color: #555;
+}
+
+.rating {
+  display: flex;
+  justify-content: center;
+}
+
+.star {
+  color: #ccc;
+  font-size: 18px;
+}
+
+.star.filled {
+  color: #fbc02d; /* gold stars */
+}

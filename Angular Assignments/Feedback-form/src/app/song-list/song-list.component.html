@@ -1,0 +1,37 @@
+<div class="container">
+  <h2 class="header">🎶  Music Playlist</h2>
+
+  <!-- Dropdown for Artist / Album -->
+  <mat-form-field appearance="fill">
+    <mat-label>Filter By</mat-label>
+    <mat-select [(value)]="filterBy">
+      <mat-option value="artist">Artist</mat-option>
+      <mat-option value="album">Album</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Input field for value -->
+  <mat-form-field appearance="fill">
+    <mat-label>Enter {{filterBy}}</mat-label>
+    <input matInput [(ngModel)]="filterValue" placeholder="Search..." />
+  </mat-form-field>
+
+  <!-- Song Cards -->
+  <div class="song-list">
+    <mat-card *ngFor="let song of filteredSongs">
+      <mat-card-header>
+        <mat-card-title>{{ song.title }}</mat-card-title>
+        <mat-card-subtitle>{{ song.artist }} • {{ song.album }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>⏱ Duration: {{ song.duration }}</p>
+        <p>⭐ Rating: {{ song.rating }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-icon-button color="primary">
+          <mat-icon>play_arrow</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

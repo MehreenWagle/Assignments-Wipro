@@ -1,0 +1,17 @@
+
+.calculator {
+  max-width: 320px;
+  margin: 50px auto;
+  background: #fdfdfd;
+}
+
+button {
+  font-size: 1.4rem;
+  padding: 18px;
+  border-radius: 12px;
+  transition: 0.2s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.05);
+}

@@ -1,0 +1,30 @@
+<div class="movie-container">
+  <h1 class="welcome-text">🎬 Welcome to Movie Explorer</h1>
+
+  <mat-form-field class="filter-dropdown" appearance="fill">
+    <mat-label>Filter by Genre</mat-label>
+    <mat-select [(value)]="selectedGenre">
+      <mat-option *ngFor="let genre of genres" [value]="genre">
+        {{ genre }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div class="avg-rating">⭐ Average Rating: {{ averageRating | number:'1.1-1' }}</div>
+
+  <div class="movies-grid">
+    <mat-card class="movie-card" *ngFor="let movie of filteredMovies">
+      <img mat-card-image [src]="movie.poster" alt="{{movie.title}}">
+      <mat-card-content>
+        <h2>{{ movie.title }}</h2>
+        <div class="genre">{{ movie.genre }}</div>
+        <div class="desc">{{ movie.description }}</div>
+        <div class="rating">
+          <mat-icon *ngFor="let star of [1,2,3,4,5]" [ngClass]="{'filled': star <= movie.rating}" class="star">
+            star
+          </mat-icon>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

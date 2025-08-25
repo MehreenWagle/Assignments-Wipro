@@ -1,0 +1,128 @@
+
+/* Main container with light blue background */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #e3f2fd; /* very light blue */
+  min-height: 100vh;
+}
+
+/* Header style */
+.header {
+  font-size: 28px;
+  font-weight: bold;
+  color: #0d47a1; /* navy blue */
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Filter / search inputs */
+mat-form-field {
+  width: 250px;
+  margin: 16px 0;
+  background: #bbdefb; /* light blue input background */
+  border-radius: 8px;
+  padding: 4px 8px;
+}
+
+/* Input and select text */
+.mat-mdc-input-element,
+.mat-mdc-select-value {
+  color: #ffffff !important; /* white text */
+  background-color: transparent !important;
+}
+
+/* Floating label */
+.mat-mdc-floating-label {
+  color: #ffffff !important;
+}
+
+/* Focused input / select */
+.mat-mdc-form-field.mat-mdc-focused .mat-mdc-input-element,
+.mat-mdc-form-field.mat-mdc-focused .mat-mdc-select-value {
+  background-color: transparent !important;
+  color: #ffffff !important;
+}
+
+/* Select box */
+.mat-mdc-select {
+  background-color: #1976d2!important; /* navy blue */
+  color: #ffffff !important;
+  border-radius: 8px;
+}
+
+/* Select options panel */
+.cdk-overlay-container .mat-mdc-select-panel {
+  background-color: #1976d2 !important; /* medium blue */
+  color: #ffffff !important;
+}
+
+/* Option hover */
+.mat-mdc-option.mdc-list-item:hover {
+  background-color: #1565c0 !important; /* slightly darker blue */
+}
+
+/* Remove default underline */
+.mat-mdc-form-field-ripple {
+  background-color: #0d47a1 !important; /* navy underline */
+}
+
+/* Song list grid */
+.song-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Song card style */
+mat-card {
+  width: 280px;
+  background: linear-gradient(135deg, #bbdefb, #90caf9); /* light blue gradient */
+  border: 2px solid #0d47a1; /* navy blue border */
+  border-radius: 16px;
+  box-shadow:  #1976d2 ;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+  padding: 16px;
+}
+
+mat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(13, 71, 161, 0.35); /* navy glow */
+}
+
+/* Card title */
+mat-card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #0d47a1; /* navy blue */
+}
+
+/* Artist + Album subtitle */
+mat-card-subtitle {
+  font-size: 14px;
+  color: #1565c0; /* medium blue */
+  font-weight: 500;
+}
+
+/* Card content (duration & rating) */
+mat-card-content {
+  font-size: 0.95rem;
+  color: #0d47a1;
+}
+
+/* Highlight for top-rated songs */
+.top-rated {
+  border: 3px solid #0d47a1; 
+  background: #90caf9;
+}
+
+/* Play button */
+.play-button {
+  color: #0d47a1;
+  cursor: pointer;
+  margin-top: 10px;
+}
